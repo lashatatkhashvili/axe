@@ -25,6 +25,11 @@ const CustomizedDialog = styled(Dialog)({
     overflow: "visible",
     backgroundColor: "#353535",
     padding: "0 83px",
+
+    "@media screen and (max-width: 620px)": {
+      minWidth: "80%",
+      padding: "0 20px",
+    },
   },
 
   "& .MuiDialogContent-root": {

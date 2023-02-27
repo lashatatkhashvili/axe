@@ -55,7 +55,7 @@ const TicTac = (props) => {
                   backgroundColor: player === 1 ? "#11E089" : "#363636",
                 }}
               >
-                20
+                0
               </div>
             </div>
 
@@ -68,7 +68,7 @@ const TicTac = (props) => {
                   backgroundColor: player === 2 ? "#11E089" : "#363636",
                 }}
               >
-                12
+                0
               </div>
             </div>
           </div>

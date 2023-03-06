@@ -23,6 +23,8 @@ const LineUp = (props) => {
   const [g, setG] = useState({ width: 0, height: 0 });
   const [player, setPlayer] = useState(1);
   const [images, setImages] = useState({});
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
 
   const ref = useRef(null);
   const ref2 = useRef(null);
@@ -48,7 +50,12 @@ const LineUp = (props) => {
         <div className="mt-[50px]" style={{ width: g.width + g.width / 7 }}>
           <div className="w-full flex flex-col sm:flex-row gap-[20px] sm:gap-[60px]">
             <div className="w-full flex gap-[12px] sm:mb-[30px]">
-              <CustomizedTextfield value={"Player 1"} active={player === 1} />
+              <CustomizedTextfield
+                onChange={(e) => setPlayer1(e.target.value)}
+                value={player1}
+                placeholder={"Player 1"}
+                active={player === 1}
+              />
               <div
                 className="flex justify-center items-center min-w-[56px] w-[56px] h-[56px] 
               text-white rounded-[10px]"
@@ -62,7 +69,12 @@ const LineUp = (props) => {
             </div>
 
             <div className="w-full flex gap-[12px] mb-[12px] sm:mb-0">
-              <CustomizedTextfield value={"Player 2"} active={player === 2} />
+              <CustomizedTextfield
+                onChange={(e) => setPlayer2(e.target.value)}
+                value={player2}
+                placeholder={"Player 2"}
+                active={player === 2}
+              />
               <div
                 className="flex justify-center items-center min-w-[56px] w-[56px] h-[56px] 
               text-white rounded-[10px]"
@@ -76,7 +88,12 @@ const LineUp = (props) => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center w-full h-[56px] bg-[#0825E9] rounded-[10px] text-white">
+          <div
+            className="flex items-center justify-center w-full h-[56px] bg-[#0825E9] rounded-[10px] text-white cursor-pointer"
+            onClick={() => {
+              setPlayer(player === 1 ? 2 : 1);
+            }}
+          >
             Miss
           </div>
         </div>

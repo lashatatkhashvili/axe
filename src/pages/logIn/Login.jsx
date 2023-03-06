@@ -14,6 +14,7 @@ import TicTacImage from "../../assets/card-tic-tac.jpg";
 import WatlImage from "../../assets/card-watl.jpg";
 import LineUpImage from "../../assets/card-line-up.jpg";
 import TicTacBanner from "../../assets/banner-tic-tac.jpg";
+import Tooltip from "@mui/material/Tooltip";
 
 import styled from "@emotion/styled";
 
@@ -60,7 +61,9 @@ const CustomizedTextfield = styled(TextField)({
 const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(
+    sessionStorage.getItem("user", name) || null
+  );
   const [open, setOpen] = useState(false);
   const [bannerIndex, setBannerIndex] = useState(0);
 
@@ -72,15 +75,26 @@ const Login = () => {
     0: {
       image: TicTacImage,
       url: "/tic-tac",
-      title: "Tic Tac Toe Play",
+      title: "Tic Tac Toe",
       banner: TicTacBanner,
+      info: "Play a classic game on a much cooler medium. Compete against friends to test your strategy and accuracy to be the first to get 3 in a row vertical, horizontal or diagonal. But beware, hitting an occupied square will clear the currently owner. Strategy or penalty? You decide! First to 3 games wins. Game is for two players or two teams.",
+      shortInfo: "Play a classic game on...",
     },
-    1: { image: WatlImage, url: "/watl", title: "Watl", banner: TicTacBanner },
+    1: {
+      image: WatlImage,
+      url: "/watl",
+      title: "21",
+      banner: TicTacBanner,
+      info: "Compete with 2 - 4 players to see who can be the first to get to 21 on the number. But be careful, if you bust, you go backwards.",
+      shortInfo: "Compete with 2-4 players...",
+    },
     2: {
       image: LineUpImage,
       url: "/line-up",
-      title: "Line Em Up Play",
+      title: "Line Em' Up",
       banner: TicTacBanner,
+      info: "A game for two players or two teams to test your strategy and accuracy to get 4 in a row vertical, horizontal or diagonal. To record your hit, you must stick your axe in an open slot and watch your coin slide down to the lowest available position.",
+      shortInfo: "A game for two players...",
     },
   };
 
@@ -88,12 +102,12 @@ const Login = () => {
     <div className="w-full h-full flex justify-center">
       <div className="w-full h-full bg-[#1a1a1a] overflow-auto pb-[100px]">
         <div className="flex items-center justify-between px-[50px] ld:px-[100px] xl:px-[150px] w-full h-[81px] bg-[#353535]">
-          <p className="text-white">Badaxetargets</p>
+          <p className="text-white">Bad Axe Targets</p>
           <p
             className="text-white cursor-pointer"
             onClick={() => !user && setOpen(true)}
           >
-            {user ? name : "Log In"}
+            {user ? user : "Log In"}
           </p>
         </div>
 
@@ -138,17 +152,24 @@ const Login = () => {
                       backgroundImage: `url(${data[index]?.image})`,
                     }}
                     onClick={() => {
-                      if (!user) {
-                        setOpen(data[index]?.url);
-                      } else {
-                        navigate(data[index]?.url);
-                      }
+                      navigate(data[index]?.url);
+                      // if (!user) {
+                      //   setOpen(data[index]?.url);
+                      // } else {
+                      //   navigate(data[index]?.url);
+                      // }
                     }}
                   ></div>
                   <p className="text-white mt-[2px] text-center">
                     {data[index]?.title}
                   </p>
-                  <p className="text-white text-center">In this Game...</p>
+                  {!!data[index]?.info && (
+                    <Tooltip title={data[index]?.info} enterTouchDelay={0}>
+                      <p className="text-white text-center cursor-pointer">
+                        {data[index]?.shortInfo}
+                      </p>
+                    </Tooltip>
+                  )}
                 </div>
               );
             })}
@@ -156,13 +177,13 @@ const Login = () => {
         </div>
       </div>
 
-      <CustomizedDialog open={open}>
-        <Box
+      <CustomizedDialog open={!user}>
+        {/* <Box
           className="absolute right-[26px] top-[35px]"
           onClick={() => setOpen(false)}
         >
           <CloseIcon />
-        </Box>
+        </Box> */}
         <p className="text-[30px] text-white text-center mt-[80px]">Log In</p>
 
         <CustomizedTextfield
@@ -187,11 +208,14 @@ const Login = () => {
         <Button
           className="login-button !text-white h-[60px] !rounded-[17px]"
           onClick={() => {
-            setUser(name);
-            if (name) {
-              if (typeof open === "string") navigate(open);
-              setOpen(false);
+            if (password && name) {
+              setUser(name);
+              sessionStorage.setItem("user", name);
             }
+            // if (name) {
+            //   if (typeof open === "string") navigate(open);
+            //   setOpen(false);
+            // }
           }}
         >
           Next

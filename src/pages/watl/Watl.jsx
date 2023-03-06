@@ -222,12 +222,18 @@ const Watl = (props) => {
               height: g.height,
             }}
           >
-            <span className='absolute top-[15.1%] left-[4%]'>8PT</span>
-            <span className='absolute top-[40.1%] left-[0%]'>6PT</span>
-            <span className='absolute top-[40.1%] left-[0%]'>5PT</span>
-            <span className='absolute top-[48.1%] left-[6%]'>1PT</span>
-            <span className='absolute top-[40.1%] right-[0%]'>5PT</span>
-            <span className='absolute top-[15.1%] right-[4%]'>8PT</span>
+            <span className='absolute text-[40%] sm:text-[80%] top-[15.1%] left-[4%]'>
+              8PT
+            </span>
+            <span className='absolute text-[40%] sm:text-[80%] top-[40.1%] left-[0%]'>
+              6PT
+            </span>
+            <span className='absolute text-[40%] sm:text-[80%] top-[40.1%] right-[0%]'>
+              5PT
+            </span>
+            <span className='absolute text-[40%] sm:text-[80%] top-[15.1%] right-[4%]'>
+              8PT
+            </span>
             <div
               style={{
                 width: "100%",
@@ -239,7 +245,13 @@ const Watl = (props) => {
                 overflow: "visible",
               }}
             >
-              <span className='absolute top-[47.9%] left-[12%]'>2PT</span>
+              <span className='absolute text-[40%] sm:text-[80%] left-[3%] top-[48.1%] left-[4%]'>
+                1PT
+              </span>
+              <span className='absolute text-[40%] sm:text-[80%] left-[10%] top-[47.9%] left-[12%]'>
+                2PT
+              </span>
+
               <div
                 className='absolute bg-[#0636D7] rounded-[50%] left-[20%] top-[12%]'
                 style={{
@@ -261,7 +273,9 @@ const Watl = (props) => {
                   border: `${(30 * g.width) / 4608}px solid black`,
                 }}
               >
-                <span className='absolute top-[47.5%] left-[15%]'>3PT</span>
+                <span className='absolute text-[40%] sm:text-[80%] top-[47.6%] left-[17%] sm:left-[15%]'>
+                  3PT
+                </span>
                 <div
                   className='w-full h-full rounded-[50%]'
                   style={{
@@ -276,7 +290,10 @@ const Watl = (props) => {
                       border: `${(30 * g.width) / 4608}px solid black`,
                     }}
                   >
-                    <span className='absolute top-[45%] left-[10%]'>4PT</span>
+                    <span className='absolute text-[40%] sm:text-[80%] top-[45%] left-[5%] left-[10%]'>
+                      4PT
+                    </span>
+
                     <div
                       className='w-full h-full rounded-[50%]'
                       style={{

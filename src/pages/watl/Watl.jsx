@@ -73,7 +73,7 @@ const Watl = (props) => {
 
     if (currentPoint + point === 21) {
       finalPoint = currentPoint + point;
-      setWinner(`Winner Player${player}`);
+      setWinner(`Player${player} Wins!`);
     } else if (currentPoint + point < 21) {
       finalPoint = currentPoint + point;
     } else if (currentPoint + point > 21) {
@@ -85,19 +85,19 @@ const Watl = (props) => {
   };
 
   return (
-    <div className='w-full !h-full bg-black'>
-      <div className='w-full flex justify-center bg-[#1D1D1D] sm:pb-[20px]'>
-        <div className='mt-[20px] sm:mt-[50px]' style={{ width: g.width }}>
-          <div className='w-full flex  justify-between flex-row gap-[20px] sm:gap-[60px]'>
-            <div>
-              <div className='w-full mb-[12px] flex gap-[12px] sm:mb-[30px]'>
+    <div className="w-full !h-full bg-black">
+      <div className="w-full flex justify-center bg-[#1D1D1D] sm:pb-[20px]">
+        <div className="mt-[5px]" style={{ width: g.width }}>
+          <div className="w-full flex  justify-between flex-row gap-[20px]">
+            <div className="w-full">
+              <div className="w-full mb-[12px] flex gap-[12px] sm:mb-[30px]">
                 <CustomizedTextfield
                   defaultValue={"Player 1"}
                   active={player === 1}
                 />
                 <div
-                  className='flex justify-center items-center w-[56px] h-[56px] 
-              text-white rounded-[10px]'
+                  className="flex justify-center items-center w-[56px] h-[56px] 
+              text-white rounded-[10px]"
                   style={{
                     backgroundColor: player === 1 ? "#11E089" : "#363636",
                   }}
@@ -106,14 +106,14 @@ const Watl = (props) => {
                 </div>
               </div>
 
-              <div className='w-full flex gap-[12px] mb-[12px] sm:mb-0'>
+              <div className="w-full flex gap-[12px]">
                 <CustomizedTextfield
                   defaultValue={"Player 2"}
                   active={player === 2}
                 />
                 <div
-                  className='flex justify-center items-center w-[56px] h-[56px] 
-              text-white rounded-[10px]'
+                  className="flex justify-center items-center w-[56px] h-[56px] 
+              text-white rounded-[10px]"
                   style={{
                     backgroundColor: player === 2 ? "#11E089" : "#363636",
                   }}
@@ -122,15 +122,15 @@ const Watl = (props) => {
                 </div>
               </div>
             </div>
-            <div>
-              <div className='w-full flex gap-[12px] mb-[12px] sm:mb-[30px]'>
+            <div className="w-full">
+              <div className="w-full flex gap-[12px] mb-[12px] sm:mb-[30px]">
                 <CustomizedTextfield
                   defaultValue={"Player 3"}
                   active={player === 3}
                 />
                 <div
-                  className='flex justify-center items-center w-[56px] h-[56px] 
-              text-white rounded-[10px]'
+                  className="flex justify-center items-center w-[56px] h-[56px] 
+              text-white rounded-[10px]"
                   style={{
                     backgroundColor: player === 3 ? "#11E089" : "#363636",
                   }}
@@ -138,14 +138,14 @@ const Watl = (props) => {
                   {playersPoints[3]}
                 </div>
               </div>
-              <div className='w-full flex gap-[12px] mb-[12px] sm:mb-0'>
+              <div className="w-full flex gap-[12px]">
                 <CustomizedTextfield
                   defaultValue={"Player 4"}
                   active={player === 4}
                 />
                 <div
-                  className='flex justify-center items-center w-[56px] h-[56px] 
-              text-white rounded-[10px]'
+                  className="flex justify-center items-center w-[56px] h-[56px] 
+              text-white rounded-[10px]"
                   style={{
                     backgroundColor: player === 4 ? "#11E089" : "#363636",
                   }}
@@ -157,81 +157,112 @@ const Watl = (props) => {
           </div>
         </div>
       </div>
-      <div className='bg-[#1D1D1D] w-full'>
+      <div className="bg-[#1D1D1D] w-full">
         <div
           style={{ width: g.width }}
-          className='grid grid-cols-7 gap-[5px] sm:gap-[15px] py-[20px] sm:py-[34px] m-auto bg-transparent'
+          className="grid grid-cols-7 gap-[5px] py-[10px] m-auto bg-transparent"
         >
           <button
-            className='text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(1)}
           >
-            <div className=' text-[18px] leading-[23px]'>1</div>
+            <div className=" text-[18px] leading-[23px]">1</div>
           </button>
           <button
-            className='text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(2)}
           >
-            <div className=' text-[18px] leading-[23px]'>2</div>
+            <div className=" text-[18px] leading-[23px]">2</div>
           </button>
           <button
-            className='text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(3)}
           >
-            <div className=' text-[18px] leading-[23px]'>3</div>
+            <div className=" text-[18px] leading-[23px]">3</div>
           </button>
           <button
-            className='text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(4)}
           >
-            <div className=' text-[18px] leading-[23px]'>4</div>
+            <div className=" text-[18px] leading-[23px]">4</div>
           </button>
           <button
-            className='text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px]  border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(5)}
           >
-            <div className=' text-[18px] leading-[23px]'>5</div>
+            <div className=" text-[18px] leading-[23px]">5</div>
           </button>
           <button
-            className='text-[#fff] py-[14px] rounded-[10px] bg-[#FF0016] border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px] bg-[#FF0016] border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(6)}
           >
-            <div className=' text-[18px] leading-[23px]'>6</div>
+            <div className=" text-[18px] leading-[23px]">6</div>
           </button>
           <button
-            className='text-[#fff] py-[14px] rounded-[10px] bg-[#0636D7] border-solid border-[1px] border-[#5A5A5A]'
+            className="text-[#fff] py-[14px] rounded-[10px] bg-[#0636D7] border-solid border-[1px] border-[#5A5A5A]"
             onClick={() => handlePointClick(8)}
           >
-            <div className=' text-[18px] leading-[23px]'>8</div>
+            <div className=" text-[18px] leading-[23px]">8</div>
           </button>
         </div>
-      </div>
-      <div className='w-full h-[calc(100%-240px)] sm:h-[calc(100%-300px)] p-[50px] pt-0 flex items-center justify-center bg-[#1D1D1D]'>
         <div
-          className='w-full h-full flex items-start justify-center relative'
+          className="flex items-center m-auto !mb-[10px] outline-0 justify-center w-full h-[56px] bg-[#0825E9] rounded-[10px] text-white cursor-pointer"
+          onClick={() => handlePointClick(0)}
+          style={{ width: g.width }}
+        >
+          Miss
+        </div>
+      </div>
+      <div className="w-full h-[calc(100%-240px)] sm:h-[calc(100%-300px)] p-[50px] pt-0 flex items-center justify-center bg-[#1D1D1D]">
+        <div
+          className="w-full h-full flex items-start justify-center relative"
           ref={ref}
         >
           <div
             ref={ref2}
-            className='relative'
+            className="relative"
             style={{
-              padding: "30px",
+              padding: (g.width * 30) / 619,
               borderRadius: 20,
               background: "#FFF",
               width: g.width,
               height: g.height,
             }}
           >
-            <span className='absolute text-[40%] sm:text-[80%] top-[15.1%] left-[4%]'>
-              8PT
-            </span>
-            <span className='absolute text-[40%] sm:text-[80%] top-[40.1%] left-[0%]'>
+            <div
+              className="absolute top-[50%] left-[1%] w-[46%]"
+              style={{
+                borderTop: `${(30 * g.width) / 6500}px dashed red`,
+              }}
+            />
+            <div
+              className="absolute xsm:top-[53%] top-[53.5%] right-[1%] w-[49%]"
+              style={{
+                borderTop: `${(30 * g.width) / 6500}px dashed #6e6e6f`,
+              }}
+            />
+            <span
+              className="absolute xsm:text-[10px]  text-[100%] xsm:top-[44.1%] sm:top-[46%] top-[47.1%] left-[0%]"
+              style={{
+                fontSize: (g.width * 16) / 619,
+              }}
+            >
               6PT
             </span>
-            <span className='absolute text-[40%] sm:text-[80%] top-[40.1%] right-[0%]'>
+            <span
+              className="absolute xsm:text-[10px] text-[100%] xsm:top-[46.8%] top-[49.1%] right-[0%]"
+              style={{
+                fontSize: (g.width * 16) / 619,
+              }}
+            >
               5PT
             </span>
-            <span className='absolute text-[40%] sm:text-[80%] top-[15.1%] right-[4%]'>
+            <span
+              className={`absolute xsm:text-[10px]  text-[100%] top-[8%] sm:top-[7.1%] right-[4%]`}
+              style={{
+                fontSize: (g.width * 16) / 619,
+              }}
+            >
               8PT
             </span>
             <div
@@ -245,63 +276,105 @@ const Watl = (props) => {
                 overflow: "visible",
               }}
             >
-              <span className='absolute text-[40%] sm:text-[80%] left-[3%] top-[48.1%] left-[4%]'>
+              <span
+                className="absolute xsm:text-[10px] text-[100%] xsm:left-[2%] top-[51.8%] left-[3%]"
+                style={{
+                  fontSize: (g.width * 16) / 619,
+                }}
+              >
                 1PT
               </span>
-              <span className='absolute text-[40%] sm:text-[80%] left-[10%] top-[47.9%] left-[12%]'>
+              <span
+                className="absolute xsm:text-[10px] text-[100%] left-[10%] top-[51.8%] xs-left-[10%] left-[13%]"
+                style={{
+                  fontSize: (g.width * 16) / 619,
+                }}
+              >
                 2PT
               </span>
 
               <div
-                className='absolute bg-[#0636D7] rounded-[50%] left-[20%] top-[12%]'
+                className="absolute top-[8.9%] left-[22%] w-[78.5%] z-[1]"
+                style={{
+                  borderTop: `${(30 * g.width) / 6500}px dashed #6e6e6f`,
+                }}
+              />
+
+              <div
+                className="absolute top-[8.9%] left-[22%] z-[1]"
+                style={{
+                  borderLeft: `${(30 * g.width) / 6500}px dotted #6e6e6f`,
+                  height: "2.6%",
+                }}
+              />
+              <div
+                className="absolute top-[8.9%] right-[22.5%] z-[1]"
+                style={{
+                  borderLeft: `${(30 * g.width) / 6500}px dotted #6e6e6f`,
+                  height: "2.6%",
+                }}
+              />
+
+              <div
+                className="absolute bg-[#0636D7] rounded-[50%] left-[20%] top-[12%]"
                 style={{
                   width: "5%",
                   height: "5%",
                 }}
               ></div>
               <div
-                className='absolute bg-[#0636D7] rounded-[50%] right-[20%] top-[12%]'
+                className="absolute bg-[#0636D7] rounded-[50%] right-[20%] top-[12%]"
                 style={{
                   width: "5%",
                   height: "5%",
                 }}
               ></div>
               <div
-                className='w-full h-full relative rounded-[50%]'
+                className="w-full h-full relative rounded-[50%]"
                 style={{
                   padding: (384 * g.width) / 4608,
                   border: `${(30 * g.width) / 4608}px solid black`,
                 }}
               >
-                <span className='absolute text-[40%] sm:text-[80%] top-[47.6%] left-[17%] sm:left-[15%]'>
+                <span
+                  className="absolute xsm:text-[10px] text-[100%] top-[52.3%] xs:left-[15%] left-[16%] "
+                  style={{
+                    fontSize: (g.width * 16) / 619,
+                  }}
+                >
                   3PT
                 </span>
                 <div
-                  className='w-full h-full rounded-[50%]'
+                  className="w-full h-full rounded-[50%]"
                   style={{
                     padding: (384 * g.width) / 4608,
                     border: `${(30 * g.width) / 4608}px solid black`,
                   }}
                 >
                   <div
-                    className='w-full h-full relative rounded-[50%]'
+                    className="w-full h-full relative rounded-[50%]"
                     style={{
                       padding: "30%",
                       border: `${(30 * g.width) / 4608}px solid black`,
                     }}
                   >
-                    <span className='absolute text-[40%] sm:text-[80%] top-[45%] left-[5%] left-[10%]'>
+                    <span
+                      className="absolute xsm:text-[10px] text-[100%] top-[55%] left-[12%] xsm:left-[7%]"
+                      style={{
+                        fontSize: (g.width * 16) / 619,
+                      }}
+                    >
                       4PT
                     </span>
 
                     <div
-                      className='w-full h-full rounded-[50%]'
+                      className="w-full h-full rounded-[50%]"
                       style={{
-                        padding: "20%",
+                        padding: "28%",
                         border: `${(30 * g.width) / 4608}px solid black`,
                       }}
                     >
-                      <div className='w-full h-full rounded-[50%] bg-[red]'></div>
+                      <div className="w-full h-full rounded-[50%] bg-[red]"></div>
                     </div>
                   </div>
                 </div>
@@ -311,10 +384,10 @@ const Watl = (props) => {
         </div>
       </div>
       <CustomizedDialog open={winner}>
-        <p className='text-white text-[30px] text-center mt-[10px]'>{winner}</p>
+        <p className="text-white text-[30px] text-center mt-[10px]">{winner}</p>
 
         <Button
-          className='login-button !text-white h-[60px] !rounded-[17px] !my-[20px]'
+          className="login-button !text-white h-[60px] !rounded-[17px] !my-[20px]"
           onClick={() => {
             setWinner(null);
             setPlayersPoints({
@@ -329,7 +402,7 @@ const Watl = (props) => {
           Play Again
         </Button>
         <Button
-          className='login-button !text-white h-[60px] !rounded-[17px]'
+          className="login-button !text-white h-[60px] !rounded-[17px]"
           onClick={() => navigate("/")}
         >
           Back Home
